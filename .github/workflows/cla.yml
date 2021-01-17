@@ -23,14 +23,18 @@ jobs:
 
       - name: "CLA Assistant"
         if: ${{ steps.recheck.outputs.match != '' || steps.sign.outputs.match != '' }} || github.event_name == 'pull_request_target'
-        # Alpha Release
-        uses: cla-assistant/github-action@v2.0.1-alpha
-        env:
-          # Generated and maintained by github
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PERSONAL_ACCESS_TOKEN : ${{ secrets.CLA_SIGN_TOKEN }}
-        with:
-          path-to-signatures: 'signed_clas.json'
-          path-to-cla-document: 'https://jfrog.com/cla/'
-          branch: 'master'
-          allowlist: bot*
+        run: |
+          echo 'hello'
+          echo '$steps.recheck.outputs.match'
+          echo '$steps.sign.outputs.match'
+        # # Alpha Release
+        # uses: cla-assistant/github-action@v2.0.1-alpha
+        # env:
+        #   # Generated and maintained by github
+        #   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        #   PERSONAL_ACCESS_TOKEN : ${{ secrets.CLA_SIGN_TOKEN }}
+        # with:
+        #   path-to-signatures: 'signed_clas.json'
+        #   path-to-cla-document: 'https://jfrog.com/cla/'
+        #   branch: 'master'
+        #   allowlist: bot*
