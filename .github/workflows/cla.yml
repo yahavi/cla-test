@@ -34,3 +34,4 @@ jobs:
           path-to-document: 'https://jfrog.com/cla/'
           branch: 'master'
           allowlist: bot*
+          custom-pr-sign-comment: 'I accept the terms'
