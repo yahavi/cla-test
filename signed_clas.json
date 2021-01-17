@@ -1,3 +1,12 @@
 {
-  "signedContributors": []
+  "signedContributors": [
+    {
+      "name": "yahavi",
+      "id": 11367982,
+      "comment_id": 761810676,
+      "created_at": "2021-01-17T13:12:28Z",
+      "repoId": 330350167,
+      "pullRequestNo": 11
+    }
+  ]
 }
