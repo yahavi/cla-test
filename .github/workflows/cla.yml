@@ -22,7 +22,7 @@ jobs:
           regex: '\s*recheckcla\s*'
 
       - name: "CLA Assistant"
-        if: (steps.recheck.outputs.match != '' || steps.sign.outputs.match != '') || github.event_name == 'pull_request_target'
+        if: ${{ steps.recheck.outputs.match != '' || steps.sign.outputs.match != '' }} || github.event_name == 'pull_request_target'
         # Alpha Release
         uses: cla-assistant/github-action@v2.0.1-alpha
         env:
