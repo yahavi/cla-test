@@ -24,7 +24,7 @@ jobs:
       - name: "CLA Assistant"
         if: ${{ steps.recheck.outputs.match != '' || steps.sign.outputs.match != '' }} || github.event_name == 'pull_request_target'
         # Alpha Release
-        uses: yahavi/github-action@trim
+        uses: cla-assistant/github-action@v2.1.1-beta
         env:
           # Generated and maintained by github
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
