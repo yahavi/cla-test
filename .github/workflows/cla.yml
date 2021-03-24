@@ -16,7 +16,7 @@ jobs:
           regex: '\s*(I have read the CLA Document and I hereby sign the CLA)|(recheckcla)\s*'
       
       - name: "CLA Assistant"
-        if: ${{ steps.sign-or-check.outputs.match != '' && github.event.issue.pull_request }} || github.event_name == 'pull_request_target'
+        if: ${{ steps.sign-or-check.outputs.match != '' }} || (github.event_name == 'pull_request_target' && ${{ github.event.issue.pull_request }})
         # Alpha Release
         uses: cla-assistant/github-action@v2.1.1-beta
         env:
