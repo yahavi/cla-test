@@ -9,6 +9,9 @@ jobs:
   CLAssistant:
     runs-on: ubuntu-latest
     steps:
+      - name: "Check PR"
+        if: ! github.event.issue.pull_request
+        run: exit 0
       - uses: actions-ecosystem/action-regex-match@v2
         id: sign-or-check
         with:
