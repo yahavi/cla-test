@@ -15,7 +15,7 @@ jobs:
           text: ${{ github.event.comment.body }}
           regex: '\s*(I have read the CLA Document and I hereby sign the CLA)|(recheckcla)\s*'
       - name: "Echo"
-        run: echo "${{ github.event.issue.pull_request }}"
+        run: echo github.event_name
       
       - name: "CLA Assistant"
         if: ${{ steps.sign-or-check.outputs.match != '' }} || github.event_name == 'pull_request_target' && ${{ github.event.issue.pull_request }}
